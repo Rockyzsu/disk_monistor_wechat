@@ -70,7 +70,7 @@ function sendWeChatNotification(message) {
 getDiskFree((freeGB) => {
   console.log(`磁盘剩余空间: ${freeGB}GB`);
   if (freeGB < THRESHOLD_GB) {
-    const message = `${process.env.HOSTNAME} 空间告警\n剩余空间: ${freeGB}GB\n`;
+    const message = `${process.env.HOST_NAME} 空间告警\n剩余空间: ${freeGB}GB\n`;
     sendWeChatNotification(message);
   } else {
     console.log('磁盘空间充足，无需通知');
